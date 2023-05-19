@@ -159,7 +159,7 @@ class Enchanting(Profession):
         super().__init__(
             name="enchanting",
             nexus_hub_api=nexus_hub_api,
-            recipe_json_path="enchanting.json",
+            recipe_json_path="data/enchanting.json",
             broken_recipes=broken_recipes,
             required_recipes=required_recipes,
         )
@@ -169,7 +169,7 @@ class Engineering(Profession):
         super().__init__(
             name="engineering",
             nexus_hub_api=nexus_hub_api,
-            recipe_json_path="engineering.json",
+            recipe_json_path="data/engineering.json",
         )
 
         print(self.recipes)

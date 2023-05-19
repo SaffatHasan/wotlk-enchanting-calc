@@ -106,12 +106,12 @@ class NexusHubApi:
     """
     @staticmethod
     def fetch_servers():
-        if not os.path.exists("servers.json"):
+        if not os.path.exists("data/servers.json"):
             servers = requests.get(f"https://api.nexushub.co/wow-classic/v1/servers/full").json()
-            with open("servers.json", "w") as f:
+            with open("data/servers.json", "w") as f:
                 json.dump(servers, f)
             return servers
-        with open("servers.json", "r") as f:
+        with open("data/servers.json", "r") as f:
             return map(lambda x: x["slug"], json.load(f))
 
 @dataclass
