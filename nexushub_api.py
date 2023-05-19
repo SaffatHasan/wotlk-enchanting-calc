@@ -51,7 +51,8 @@ class NexusHubApi:
             self.save_cache()
             print(f"Fetched data for {item_data['name']} ({item_id}) on {self.server}-{self.faction}")
             return item_data
-    
+
+    # TODO: delete cache if old
     def load_cache(self):
         """Loads the item cache from disk, or returns an empty dict if the file does not exist."""
         cache_path = self.cache_path()
@@ -66,7 +67,7 @@ class NexusHubApi:
             json.dump(self.cache, f)
 
     def cache_path(self):
-        return f"item_cache_{self.server}_{self.faction}.json"
+        return f"cache/item_cache_{self.server}_{self.faction}.json"
 
     """
     Sample response:
