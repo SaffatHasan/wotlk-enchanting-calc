@@ -118,17 +118,3 @@ class Recipe:
         except ZeroDivisionError as e:
             print(f"Failed to get level_up probability for {self.name}.")
             raise e
-
-        # https://www.wowhead.com/forums/topic/understanding-the-color-coded-leveling-on-wowhead-110989#p1271595
-        # This is just an approximate for now
-        if skill_level >= self.colors[3]:
-            return 0
-        if skill_level >= self.colors[2]:
-            return 0.25
-        if skill_level >= self.colors[1]:
-            return 0.75
-        if skill_level == self.colors[0]:
-            return 1
-        
-        # Gray
-        return 0

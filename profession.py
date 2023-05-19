@@ -43,10 +43,6 @@ class Profession:
                 continue
             self.recipe_path.append(result)
 
-    @staticmethod
-    def __str__():
-        return "fo"
-
     def print_recipe_path(self, target: int):
         print_combined_recipe(self.recipe_path[:target])
 
